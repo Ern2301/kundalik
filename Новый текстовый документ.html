@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html>
+<head lang="ru">
+    <meta name="google" value="notranslate"/>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="x-ua-compatible" content="ie=edge"><script type="text/javascript">window.NREUM||(NREUM={});NREUM.info = {"beacon":"bam-cell.nr-data.net","errorBeacon":"bam-cell.nr-data.net","licenseKey":"705b0fae29","applicationID":"464703229","transactionName":"ZwdRMhQAChICVBdcXV5NfjAlTiAEBVYWWUZzDV0SFA4IDQZFTHxcVAdL","queueTime":0,"applicationTime":33,"agent":"","atts":""}</script><script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={licenseKey:"705b0fae29",applicationID:"464703229"};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var i=e[n]={exports:{}};t[n][0].call(i.exports,function(e){var i=t[n][1][e];return r(i||e)},i,i.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<n.length;i++)r(n[i]);return r}({1:[function(t,e,n){function r(){}function i(t,e,n){return function(){return o(t,[u.now()].concat(f(arguments)),e?null:this,n),e?void 0:this}}var o=t("handle"),a=t(8),f=t(9),c=t("ee").get("tracer"),u=t("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var d=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],p="api-",l=p+"ixn-";a(d,function(t,e){s[e]=i(p+e,!0,"api")}),s.addPageAction=i(p+"addPageAction",!0),s.setCurrentRouteName=i(p+"routeName",!0),e.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(t,e){var n={},r=this,i="function"==typeof e;return o(l+"tracer",[u.now(),t,n],r),function(){if(c.emit((i?"":"no-")+"fn-start",[u.now(),r,i],n),i)try{return e.apply(this,arguments)}catch(t){throw c.emit("fn-err",[arguments,this,t],n),t}finally{c.emit("fn-end",[u.now()],n)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,e){m[e]=i(l+e)}),newrelic.noticeError=function(t,e){"string"==typeof t&&(t=new Error(t)),o("err",[t,u.now(),!1,e])}},{}],2:[function(t,e,n){function r(t){if(NREUM.init){for(var e=NREUM.init,n=t.split("."),r=0;r<n.length-1;r++)if(e=e[n[r]],"object"!=typeof e)return;return e=e[n[n.length-1]]}}e.exports={getConfiguration:r}},{}],3:[function(t,e,n){function r(){return f.exists&&performance.now?Math.round(performance.now()):(o=Math.max((new Date).getTime(),o))-a}function i(){return o}var o=(new Date).getTime(),a=o,f=t(10);e.exports=r,e.exports.offset=a,e.exports.getLastTimestamp=i},{}],4:[function(t,e,n){function r(t){return!(!t||!t.protocol||"file:"===t.protocol)}e.exports=r},{}],5:[function(t,e,n){function r(t,e){var n=t.getEntries();n.forEach(function(t){"first-paint"===t.name?d("timing",["fp",Math.floor(t.startTime)]):"first-contentful-paint"===t.name&&d("timing",["fcp",Math.floor(t.startTime)])})}function i(t,e){var n=t.getEntries();n.length>0&&d("lcp",[n[n.length-1]])}function o(t){t.getEntries().forEach(function(t){t.hadRecentInput||d("cls",[t])})}function a(t){if(t instanceof m&&!g){var e=Math.round(t.timeStamp),n={type:t.type};e<=p.now()?n.fid=p.now()-e:e>p.offset&&e<=Date.now()?(e-=p.offset,n.fid=p.now()-e):e=p.now(),g=!0,d("timing",["fi",e,n])}}function f(t){"hidden"===t&&d("pageHide",[p.now()])}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var c,u,s,d=t("handle"),p=t("loader"),l=t(7),m=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){c=new PerformanceObserver(r);try{c.observe({entryTypes:["paint"]})}catch(v){}u=new PerformanceObserver(i);try{u.observe({entryTypes:["largest-contentful-paint"]})}catch(v){}s=new PerformanceObserver(o);try{s.observe({type:"layout-shift",buffered:!0})}catch(v){}}if("addEventListener"in document){var g=!1,h=["click","keydown","mousedown","pointerdown","touchstart"];h.forEach(function(t){document.addEventListener(t,a,!1)})}l(f)}},{}],6:[function(t,e,n){function r(t,e){if(!i)return!1;if(t!==i)return!1;if(!e)return!0;if(!o)return!1;for(var n=o.split("."),r=e.split("."),a=0;a<r.length;a++)if(r[a]!==n[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var f=navigator.userAgent,c=f.match(a);c&&f.indexOf("Chrome")===-1&&f.indexOf("Chromium")===-1&&(i="Safari",o=c[1])}e.exports={agent:i,version:o,match:r}},{}],7:[function(t,e,n){function r(t){function e(){t(a&&document[a]?document[a]:document[i]?"hidden":"visible")}"addEventListener"in document&&o&&document.addEventListener(o,e,!1)}e.exports=r;var i,o,a;"undefined"!=typeof document.hidden?(i="hidden",o="visibilitychange",a="visibilityState"):"undefined"!=typeof document.msHidden?(i="msHidden",o="msvisibilitychange"):"undefined"!=typeof document.webkitHidden&&(i="webkitHidden",o="webkitvisibilitychange",a="webkitVisibilityState")},{}],8:[function(t,e,n){function r(t,e){var n=[],r="",o=0;for(r in t)i.call(t,r)&&(n[o]=e(r,t[r]),o+=1);return n}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],9:[function(t,e,n){function r(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,i=n-e||0,o=Array(i<0?0:i);++r<i;)o[r]=t[e+r];return o}e.exports=r},{}],10:[function(t,e,n){e.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(t,e,n){function r(){}function i(t){function e(t){return t&&t instanceof r?t:t?u(t,c,a):a()}function n(n,r,i,o,a){if(a!==!1&&(a=!0),!l.aborted||o){t&&a&&t(n,r,i);for(var f=e(i),c=v(n),u=c.length,s=0;s<u;s++)c[s].apply(f,r);var p=d[w[n]];return p&&p.push([b,n,r,f]),f}}function o(t,e){y[t]=v(t).concat(e)}function m(t,e){var n=y[t];if(n)for(var r=0;r<n.length;r++)n[r]===e&&n.splice(r,1)}function v(t){return y[t]||[]}function g(t){return p[t]=p[t]||i(n)}function h(t,e){l.aborted||s(t,function(t,n){e=e||"feature",w[n]=e,e in d||(d[e]=[])})}var y={},w={},b={on:o,addEventListener:o,removeEventListener:m,emit:n,get:g,listeners:v,context:e,buffer:h,abort:f,aborted:!1};return b}function o(t){return u(t,c,a)}function a(){return new r}function f(){(d.api||d.feature)&&(l.aborted=!0,d=l.backlog={})}var c="nr@context",u=t("gos"),s=t(8),d={},p={},l=e.exports=i();e.exports.getOrSetContext=o,l.backlog=d},{}],gos:[function(t,e,n){function r(t,e,n){if(i.call(t,e))return t[e];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return t[e]=r,r}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(t,e,n){function r(t,e,n,r){i.buffer([t],r),i.emit(t,e,n)}var i=t("ee").get("handle");e.exports=r,r.ee=i},{}],id:[function(t,e,n){function r(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:a(t,o,function(){return i++})}var i=1,o="nr@id",a=t("gos");e.exports=r},{}],loader:[function(t,e,n){function r(){if(!R++){var t=M.info=NREUM.info,e=v.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&e))return u.abort();c(E,function(e,n){t[e]||(t[e]=n)});var n=a();f("mark",["onload",n+M.offset],null,"api"),f("timing",["load",n]);var r=v.createElement("script");0===t.agent.indexOf("http://")||0===t.agent.indexOf("https://")?r.src=t.agent:r.src=l+"://"+t.agent,e.parentNode.insertBefore(r,e)}}function i(){"complete"===v.readyState&&o()}function o(){f("mark",["domContent",a()+M.offset],null,"api")}var a=t(3),f=t("handle"),c=t(8),u=t("ee"),s=t(6),d=t(4),p=t(2),l=p.getConfiguration("ssl")===!1?"http":"https",m=window,v=m.document,g="addEventListener",h="attachEvent",y=m.XMLHttpRequest,w=y&&y.prototype,b=!d(m.location);NREUM.o={ST:setTimeout,SI:m.setImmediate,CT:clearTimeout,XHR:y,REQ:m.Request,EV:m.Event,PR:m.Promise,MO:m.MutationObserver};var x=""+location,E={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1210.min.js"},O=y&&w&&w[g]&&!/CriOS/.test(navigator.userAgent),M=e.exports={offset:a.getLastTimestamp(),now:a,origin:x,features:{},xhrWrappable:O,userAgent:s,disabled:b};if(!b){t(1),t(5),v[g]?(v[g]("DOMContentLoaded",o,!1),m[g]("load",r,!1)):(v[h]("onreadystatechange",i),m[h]("onload",r)),f("mark",["firstbyte",a.getLastTimestamp()],null,"api");var R=0}},{}],"wrap-function":[function(t,e,n){function r(t,e){function n(e,n,r,c,u){function nrWrapper(){var o,a,s,p;try{a=this,o=d(arguments),s="function"==typeof r?r(o,a):r||{}}catch(l){i([l,"",[o,a,c],s],t)}f(n+"start",[o,a,c],s,u);try{return p=e.apply(a,o)}catch(m){throw f(n+"err",[o,a,m],s,u),m}finally{f(n+"end",[o,a,p],s,u)}}return a(e)?e:(n||(n=""),nrWrapper[p]=e,o(e,nrWrapper,t),nrWrapper)}function r(t,e,r,i,o){r||(r="");var f,c,u,s="-"===r.charAt(0);for(u=0;u<e.length;u++)c=e[u],f=t[c],a(f)||(t[c]=n(f,s?c+r:r,i,c,o))}function f(n,r,o,a){if(!m||e){var f=m;m=!0;try{t.emit(n,r,o,e,a)}catch(c){i([c,n,r,o],t)}m=f}}return t||(t=s),n.inPlace=r,n.flag=p,n}function i(t,e){e||(e=s);try{e.emit("internal-error",t)}catch(n){}}function o(t,e,n){if(Object.defineProperty&&Object.keys)try{var r=Object.keys(t);return r.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(o){i([o],n)}for(var a in t)l.call(t,a)&&(e[a]=t[a]);return e}function a(t){return!(t&&t instanceof Function&&t.apply&&!t[p])}function f(t,e){var n=e(t);return n[p]=t,o(t,n,s),n}function c(t,e,n){var r=t[e];t[e]=f(r,n)}function u(){for(var t=arguments.length,e=new Array(t),n=0;n<t;++n)e[n]=arguments[n];return e}var s=t("ee"),d=t(9),p="nr@original",l=Object.prototype.hasOwnProperty,m=!1;e.exports=r,e.exports.wrapFunction=f,e.exports.wrapInPlace=c,e.exports.argsToArray=u},{}]},{},["loader"]);</script>
+    <link rel="icon" href="https://static.kundalik.com/img/icons/favicon_Uz.ico" sizes="16x16 24x24 32x32 48x48 64x64" type="image/x-icon"/>
+    <link rel="shortcut icon" href="https://static.kundalik.com/img/icons/favicon_Uz.ico" sizes="16x16 24x24 32x32 48x48 64x64" type="image/x-icon"/>
+
+    <!-- non-retina iPhone pre iOS 7 -->
+    <link rel="apple-touch-icon" href="https://static.kundalik.com/img/icons/favicons_Uz/apple/57x57.png" sizes="57x57"/>
+    <!-- non-retina iPad pre iOS 7 -->
+    <link rel="apple-touch-icon" href="https://static.kundalik.com/img/icons/favicons_Uz/apple/72x72.png" sizes="72x72"/>
+    <!-- non-retina iPad iOS 7 -->
+    <link rel="apple-touch-icon" href="https://static.kundalik.com/img/icons/favicons_Uz/apple/76x76.png" sizes="76x76"/>
+    <!-- retina iPhone pre iOS 7 -->
+    <link rel="apple-touch-icon" href="https://static.kundalik.com/img/icons/favicons_Uz/apple/114x114.png" sizes="114x114"/>
+    <!-- retina iPhone iOS 7 -->
+    <link rel="apple-touch-icon" href="https://static.kundalik.com/img/icons/favicons_Uz/apple/120x120.png" sizes="120x120"/>
+    <!-- retina iPad pre iOS 7 -->
+    <link rel="apple-touch-icon" href="https://static.kundalik.com/img/icons/favicons_Uz/apple/144x144.png" sizes="144x144"/>
+    <!-- retina iPad iOS 7 -->
+    <link rel="apple-touch-icon" href="https://static.kundalik.com/img/icons/favicons_Uz/apple/152x152.png" sizes="152x152"/>
+
+    <!-- Windows 8 tile -->
+    <meta name="msapplication-TileImage" content="https://static.kundalik.com/img/icons/favicons_Uz/microsoft/144x144.png"/>
+    <meta name="msapplication-TileColor" content="#FFFFFF"/>
+    <meta name="application-name" content="Kundalik"/>
+
+    <!-- IE11 tiles -->
+    <meta name="msapplication-square70x70logo" content="https://static.kundalik.com/img/icons/favicons_Uz/microsoft/70x70.png"/>
+    <meta name="msapplication-square150x150logo" content="https://static.kundalik.com/img/icons/favicons_Uz/microsoft/150x150.png"/>
+    <meta name="msapplication-wide310x150logo" content="https://static.kundalik.com/img/icons/favicons_Uz/microsoft/310x150.png"/>
+    <meta name="msapplication-square310x310logo" content="https://static.kundalik.com/img/icons/favicons_Uz/microsoft/310x310.png.png" />
+    
+
+    <title>Kundalik</title>
+
+            <link rel="stylesheet" href="https://static.kundalik.com/assets/styles/main.min.86ffea1a.css?v=86ffea1a" media="all" type="text/css" />
+
+    <link rel="stylesheet" href="https://static.kundalik.com/styles/main/common.css?v=8e8b0233" media="all" type="text/css"/>
+    <link rel="stylesheet" href="https://static.kundalik.com/blocks/blocks.css?v=1b0607de" media="all" type="text/css" />
+
+
+<link rel="stylesheet" href="https://static.kundalik.com/client/notifications.css?v=6b917fed" type="text/css" />
+
+    <script type="text/javascript">var dnevnik = {"urls":{"domain":"kundalik.com","taskStateUrl":"https://kundalik.com/user/TaskStateHandler.ashx","moderate":null,"whiteList":["2gis.ru","adfox.ru","aliexpress.com","apple.com","avito.ru","booking.com","csdnevnik.ru","dnevnik.ru","dnevnik.ru","facebook.com","fotostrana.ru","foxford.ru","gismeteo.ru","globallab.org","google.com","google.ru","gosuslugi.ru","hh.ru","instagram.com","instagram.com","kinopoisk.ru","lego.com","lenta.ru","letovo.ru","livejournal.com","magnit.ru","magnit-info.ru","magnitznaniy.ru","mail.ru","microsoft.com","mosreg.ru","mosregtest.ru","office.com","office365.com","ok.ru","onenote.com","pikabu.ru","rambler.ru","rbc.ru","research.net","ria.ru","sberbank.ru","sharepoint.com","surveymonkey.com","surveymonkey.ru","twitch.tv","twitter.com","vk.com","wikipedia.org","yadi.sk","yaklass.ru","yandex.ru","youtu.be","youtube.com","kundalik.com","utube.uz","imumk.ru","https://uz.mfactory.online/"],"userCounters":"https://kundalik.com/counters","emailSettings":"https://kundalik.com/user/settings.aspx?view=email","smilesSpriteUrl":"https://static.kundalik.com/images/sprites/emojione.sprites.svg","tinyMceBaseUrl":"https://static.kundalik.com/assets/scripts/vendors/tinymce","gaAutoLinkUrls":null,"adblockDummyUrl":""},"settings":{"googleAnalytics":{"defaultId":"","appsId":"","adId":"","contactId":"","eventsId":"","groupsId":"","loginId":"","messengerId":"","networksId":"","childrenId":"","peopleId":"","schoolsId":"","wikiId":"","mainId":"","appSubscriptionId":"","limitedCounterId":"UA-106329441-1","limitedCounterSampleRate":1},"yandexMetrikaIds":["52725535"],"yandexMetrikaСlickmapEnabled":true,"enableAdFoxZeroPixel":true,"yandexMetrikaId":"52725535","environmentPrefix":"Uz","yandexMetrikaWebvisorEnabled":false},"fileUploadSettings":{"stateUrl":"https://content.kundalik.com/gettaskstatus","resultUrl":"https://content.kundalik.com/getresult","deleteFileUrl":"https://content.kundalik.com/delete","deleteFolderUrl":"https://content.kundalik.com/deletefolder","defaultFileSizeLimit":"2147483648"},"user":null,"auth":{"isAuthenticated":false,"updateInterval":600000,"loginUrl":"https://login.kundalik.com/auth"},"visitParams":{"__RedesignAbGroup2":"groupA"},"localizationSchoolType":null};</script>
+
+            <script type="text/javascript" src="https://static.kundalik.com/assets/scripts/modules/redesign.min.73e5de0c.js?v=73e5de0c"></script>
+    <script type="text/javascript" src="https://static.kundalik.com/assets/scripts/vendors/requirejs/require-2.1.6.js?v=ef8e5d03"></script>
+    <script type="text/javascript">
+        require.config({
+            baseUrl: "https://static.kundalik.com/assets/scripts/modules",
+            urlArgs: "v=2b123892",
+        });
+    </script>
+            <script type="text/javascript" src="https://static.kundalik.com/assets/scripts/modules/main-redesign.min.87401ae0.js?v=87401ae0"></script>
+    <script type="text/javascript" src="https://static.kundalik.com/blocks/blocks.js?v=9768458a"></script>
+    <script type="text/javascript" src="https://static.kundalik.com/javascripts/local/uz-Latn.js?v=0320e479"></script>
+
+</head>
+<body class="">
+    <script>
+        window.environmentPrefix = "uz";
+    </script>
+
+    
+<header class="header-anon" id="header-anon">
+
+    <div class="colored-line colored-line_uz">
+        <div class="colored-line__item colored-line__item_blue"></div>
+        <div class="colored-line__item colored-line__item_green"></div>
+        <div class="colored-line__item colored-line__item_yellow"></div>
+        <div class="colored-line__item colored-line__item_orange"></div>
+        <div class="colored-line__item colored-line__item_violet"></div>
+    </div>
+
+    <div class="header-anon__content">
+
+        <div class="header-anon__logotype">
+            <a href="https://kundalik.com">
+                <img src="https://static.kundalik.com/img/logotypes/uzlogotype.png" alt="Kundalik"/>
+            </a>
+        </div>
+
+        <div class="header-anon__menu-wrapper">
+            <div class="header-anon__menu">
+                <nav class="menu">
+    <ul class="menu__layout">
+            <li class="menu__layout_unit">
+                <a class="menu__item menu__item_border
+                   
+                   menu__item_no-left-padding
+                   "
+                   href=https://kundalik.com/about>Tashkilot</a>
+            </li>
+            <li class="menu__layout_unit">
+                <a class="menu__item menu__item_border
+                   
+                   
+                   "
+                   href=https://kundalik.com/features>Imkoniyatlar</a>
+            </li>
+            <li class="menu__layout_unit">
+                <a class="menu__item menu__item_border
+                   
+                   
+                   menu__item_noborder menu__item_no-right-padding"
+                   href=https://kundalik.com/support>Yordam</a>
+            </li>
+    </ul>
+</nav>
+            </div>
+            <div class="header-anon__buttons">
+                    <div class="header-anon__localization-button">
+                        
+<div class="header-localization-select">
+    <div class="header-localization-select__info">
+        <div class="header-localization-select__info_row header-localization-select__info_row-content">O&#39;zb</div>
+        <div class="header-localization-select__info_row header-localization-select__tumbler"></div>
+    </div>
+    
+    
+<div class="dropdown-container dropdown-container_font-weight-bold dropdown-container_left-position-0 dropdown-container_no-specific-last-child ">
+<a href="https://kundalik.com/api/localization/change?newCulture=uz-Latn-UZ&amp;currentUrl=https%3a%2f%2fkundalik.com%2f" title="O&#39;zbekcha" class="link link_dropdown-container-link link_dropdown-container-link_selected link_ " >
+    O&#39;zbekcha
+    
+</a><a href="https://kundalik.com/api/localization/change?newCulture=uz-Cyrl-UZ&amp;currentUrl=https%3a%2f%2fkundalik.com%2f" title="Ўзбекча" class="link link_dropdown-container-link link_ link_ " >
+    Ўзбекча
+    
+</a><a href="https://kundalik.com/api/localization/change?newCulture=ru-RU&amp;currentUrl=https%3a%2f%2fkundalik.com%2f" title="Русский" class="link link_dropdown-container-link link_ link_ " >
+    Русский
+    
+</a></div><script>require(['DropdownContainer/DropdownContainer'], function () { for(var i = 0, l = arguments.length; i < l; i += 1) { arguments[i](JSON.parse('\x7b\x22tumblerClass\x22\x3a\x22header-localization-select\x22,\x22activationClasses\x22\x3a\x5b\x22header-localization-select__info\x22,\x22dropdown-container\x22\x5d\x7d')); } });</script>
+</div>
+                    </div>
+                <div class="header-anon__button">
+                    <a href="https://login.kundalik.com/login" title="Kirish" class="button button_blue button_padding-20    " onclick="" 
+   data-category="" data-action="" data-target="">
+    Kirish
+</a>
+                </div>
+                    <div class="header-anon__button">
+                        <a href="https://login.kundalik.com/join/role" title="Tashkilotni ulash" class="button button_green button_padding-20 button_margin-left-20    " onclick="" 
+   data-category="" data-action="" data-target="">
+    Tashkilotni ulash
+</a>
+                    </div>
+
+            </div>
+        </div>
+    </div>
+</header>
+
+
+
+<div class="main main_no-padding ">
+    
+<div class="slider">
+    <div class="slider__layout">
+        <div class="slider__line">
+            <div class="slider__item slider__item_teachers slider__item_hidden">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-24 col-xs-24">
+                            <div class="slider__item__content">
+                                <div class="slider__item__content__image slider__item__content__image_teacher slider__item__content__image_teacher_uz">
+                                    <img class="slider__item__content__image__teacher slider__item__content__image__teacher_uz" src="https://static.kundalik.com/img/slider/uz/teachers.png" alt="O‘qituvchilarga" />
+                                </div>
+                                <div class="slider__item__content__text">
+                                    <div class="slider__item__content__text_title">
+                                        <div class="slider__item__content__text_title-name">O‘qituvchilarga</div>
+                                    </div>
+                                    <div class="slider__item__content__text_description">
+    O‘quv jarayonini avtomatlashtirish bo‘yicha ilg‘or texnologiyalarga, onlayn ta'lim vositalari va ota-onalar bilan muloqot qilishning zamonaviy usullariga kirish uchun ruxsat oling.<br /><br /><br /><br /></div>
+                                </div>
+                                <div class="slider__item__content__button slider__item__content__button_uz">
+                                    <a href="features#/teachers" title="Batafsil ma&#39;lumot" class="button button_grey-rounded    " onclick="" 
+   data-category="" data-action="" data-target="">
+    Batafsil ma&#39;lumot
+</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="slider__item slider__item_parents slider__item_hidden">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-24 col-xs-24">
+                            <div class="slider__item__content">
+                                <div class="slider__item__content__image slider__item__content__image_parents slider__item__content__image_parents_uz">
+                                    <img class="slider__item__content__image__parents slider__item__content__image__parents_uz" src="https://static.kundalik.com/img/slider/uz/parents.png" alt="Ota-onalarga" />
+                                </div>
+                                <div class="slider__item__content__text">
+                                    <div class="slider__item__content__text_title">
+                                        <div class="slider__item__content__text_title-name">
+                                            Ota-onalarga
+                                        </div>
+                                    </div>
+                                    <div class="slider__item__content__text_description">
+    Kundalik bilan farzandingizga yaqinroq bo‘ling!<br />
+    Farzandingizning  yutuqlari va qiziqishlarini nazorat qiling, ta'lim jarayonida birgalikda  faol ishtirok eting!<br /><br /></div>
+                                </div>
+                                <div class="slider__item__content__button slider__item__content__button_uz">
+                                    <a href="features#/parents" title="Batafsil ma&#39;lumot" class="button button_grey-rounded    " onclick="" 
+   data-category="" data-action="" data-target="">
+    Batafsil ma&#39;lumot
+</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="slider__item slider__item_childrens slider__item_childrens_uz slider__item_hidden">
+
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-24 col-xs-24">
+                            <div class="slider__item__content">
+                                <div class="slider__item__content__image slider__item__content__image_childrens slider__item__content__image_childrens_uz">
+                                    <img class="slider__item__content__image__childrens slider__item__content__image__childrens_uz" src="https://static.kundalik.com/img/slider/uz/students.png" alt="O‘quvchilarga" />
+                                </div>
+                                <div class="slider__item__content__text">
+                                    <div class="slider__item__content__text_title">
+                                        <div class="slider__item__content__text_title-name">
+                                            O‘quvchilarga
+                                        </div>
+                                    </div>
+                                    <div class="slider__item__content__text_description">
+    Kundalik Sizga yoqadi! O‘qish uchun, darsdan tashqari ishlar uchun, ijodiy g‘alabalar va o‘z-o‘zini ifoda qilish uchun barcha zarur bo‘lgan narsalar har doim qo‘lida.<br /><br /><br /></div>
+                                </div>
+                                <div class="slider__item__content__button slider__item__content__button_uz">
+                                    <a href="features#/students" title="Batafsil ma&#39;lumot" class="button button_grey-rounded    " onclick="" 
+   data-category="" data-action="" data-target="">
+    Batafsil ma&#39;lumot
+</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+                <div class="slider__item slider__item_officials slider__item_hidden">
+                    <div class=" container">
+                    <div class="row">
+                        <div class="col-md-24 col-xs-24">
+                            <div class="slider__item__content">
+                                <div class="slider__item__content__image slider__item__content__image_officials slider__item__content__image_officials_uz">
+                                    <img class="slider__item__content__image__officials" src="https://static.kundalik.com/img/slider/uz/officials.png" alt="Davlat organlariga" />
+                                </div>
+                                <div class="slider__item__content__text">
+                                        <div class="slider__item__content__text_title">
+                                            <div class="slider__item__content__text_title-name">
+                                                Davlat organlariga
+                                            </div>
+                                        </div>
+                                    <div class="slider__item__content__text_description">
+    Kundalik ta'limni boshqarish organlari uchun - bu onlayn-monitoring  vositasi va ta'lim  muassasasining quyi tizimlarini tezkor xabardor qilishning samarali kanalidir. <br /><br /><br /><br /></div>
+                                    </div>
+                                    <div class="slider__item__content__button slider__item__content__button_uz">
+                                        <a href="features#/governments" title="Batafsil ma&#39;lumot" class="button button_grey-rounded    " onclick="" 
+   data-category="" data-action="" data-target="">
+    Batafsil ma&#39;lumot
+</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        </div>
+    </div>
+    <div class="slider__arrows hidden-xs hidden-sm">
+        <div class="slider__arrows__item slider__arrows__item_prev"></div>
+        <div class="slider__arrows__item slider__arrows__item_next"></div>
+    </div>
+    <div class="slider__bar"></div>
+    <div class="slider__icons">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 col-md-offset-4 col-xs-4 col-xs-offset-4">
+                    <div class="slider__icons__item">
+
+                      
+                        <div class="slider__icons__item__image slider__icons__item__image_teacher slider__icons__item__image_teacher_uz slider__icons__item__image_active "></div>
+                        <div class="slider__icons__item__label">O‘qituvchilarga</div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-xs-4">
+                    <div class="slider__icons__item">
+                 
+                        <div class="slider__icons__item__image slider__icons__item__image_parents slider__icons__item__image_parents_uz "></div>
+                        <div class="slider__icons__item__label">Ota-onalarga</div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-xs-4">
+                    <div class="slider__icons__item">
+                      
+                        <div class="slider__icons__item__image slider__icons__item__image_childrens slider__icons__item__image_childrens_uz "></div>
+                        <div class="slider__icons__item__label">O‘quvchilarga</div>
+                    </div>
+                </div>
+                    <div class="col-md-4 col-xs-4">
+                        <div class="slider__icons__item">
+                            <div class="slider__icons__item__image slider__icons__item__image_officials slider__icons__item__image_officials_uz "></div>
+                            <div class="slider__icons__item__label">Davlat organlariga</div>
+                        </div>
+                    </div>
+            </div>
+        </div>
+    </div>
+    </div>
+<script>require(['Slider/Slider'], function () { for(var i = 0, l = arguments.length; i < l; i += 1) { arguments[i](JSON.parse('null')); } });</script>
+
+</div> 
+
+<footer class="footer">
+    <div class="footer__menu">
+        <div>
+            <div class="footer__menu__links">
+                    <div class="footer__column_25">
+                            <div class="footer__menu__links__title">Tashkilot haqida</div>
+                            <ul class="footer__menu__links__layout">
+                                    <li class="footer__menu__links__layout_item">
+                                        <a href="https://kundalik.com/about" class="footer__menu__links__item">Biz haqimizda</a>
+                                    </li>
+                                    <li class="footer__menu__links__layout_item">
+                                        <a href="https://kundalik.com/news" class="footer__menu__links__item">Yangiliklar</a>
+                                    </li>
+                                    <li class="footer__menu__links__layout_item">
+                                        <a href="https://kundalik.com/contacts" class="footer__menu__links__item">Aloqa uchun ma&#39;lumotlar</a>
+                                    </li>
+                            </ul>
+                    </div>
+                    <div class="footer__column_25">
+                            <div class="footer__menu__links__title">Imkoniyatlar</div>
+                            <ul class="footer__menu__links__layout">
+                                    <li class="footer__menu__links__layout_item">
+                                        <a href="https://kundalik.com/features#/teachers" class="footer__menu__links__item">O‘qituvchilarga</a>
+                                    </li>
+                                    <li class="footer__menu__links__layout_item">
+                                        <a href="https://kundalik.com/features#/parents" class="footer__menu__links__item">Ota-onalarga</a>
+                                    </li>
+                                    <li class="footer__menu__links__layout_item">
+                                        <a href="https://kundalik.com/features#/students" class="footer__menu__links__item">O‘quvchilarga</a>
+                                    </li>
+                                    <li class="footer__menu__links__layout_item">
+                                        <a href="https://kundalik.com/features#/governments" class="footer__menu__links__item">Davlat organlariga</a>
+                                    </li>
+                            </ul>
+                    </div>
+                    <div class="footer__column_25">
+                    </div>
+                <div class="footer__column_25">
+                    <div class="footer__menu__links__last-column-wrapper">
+                            <div class="footer__menu__links__title footer__menu__links__title_no-margin-top">
+                                Qo‘llab-quvvatlash
+                            </div>
+                            <div class="footer__menu__links__support">
+                                    <a href="https://help.kundalik.com" class="footer__menu__links__support__link">Qo‘llab-quvvatlash xizmati portal</a>
+                            </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+            <div>
+                <div class="footer__menu__buttons">
+                        <div class="footer__column_25">
+                            <div class="sociallinks">
+        <a class="sociallinks__button sociallinks__button_facebook " href="https://www.facebook.com/KundalikUzbekistan" target="_blank" title="Facebook da Kundalik"></a>
+        <a class="sociallinks__button sociallinks__button_instagram " href="https://instagram.com/kundalikuzbekistan" target="_blank" title="Instagram da Kundalik"></a>
+        <a class="sociallinks__button sociallinks__button_telegram " href="https://t.me/kundalik_com" target="_blank" title="Telegram da Kundalik"></a>
+        <a class="sociallinks__button sociallinks__button_youtube " href="https://www.youtube.com/channel/UCXEyWtrq2E7ZQ3D8tiOmCZg" target="_blank" title="YouTube da Kundalik"></a>
+        <a class="sociallinks__button sociallinks__button_mover " href="https://mover.uz/channel/kundalikcom/" target="_blank" title="Mover da Kundalik"></a>
+</div>
+                        </div>
+                                            <div class="footer__column_25 footer__join">
+                            <a href="https://login.kundalik.com/join/role" title="Tashkilotni ulash" class="button button_green button_full-width    " onclick="" 
+   data-category="" data-action="" data-target="">
+    Tashkilotni ulash
+</a>
+                        </div>
+                </div>
+            </div>
+            </div>
+    <div class="footer__copyright">
+        <div class="footer__copyright-content">
+            
+            <div class="footer__copyright-item">
+                <div class="footer__copyright__terms">
+
+                        <a href="https://kundalik.com/agreements/terms" class="footer__copyright__terms__link">Foydalanuvchining shartnomasi </a>
+                </div>
+            </div>
+            <div class="footer__copyright-item">
+                <div class="footer__copyright__label">&#169; 2021 ООО &#171;Kundalik&#187;</div>
+            </div>
+        </div>
+    </div>
+
+</footer>
+<script>require(['Footer/Footer'], function () { for(var i = 0, l = arguments.length; i < l; i += 1) { arguments[i](JSON.parse('null')); } });</script>
+
+    <script type="text/javascript">
+    require(['yandexMetrika/yandexMetrikaCounter']);
+    require(['analytics/commonYaMetrika']);
+</script>
+<noscript>
+    <div>
+            <img src="//mc.yandex.ru/watch/52725535" style="position: absolute; left: -9999px;" alt="" />
+    </div>
+</noscript>
+        <script type="text/javascript">
+            require(['ab/ab'], function (ab) {
+                window.onload = function () {
+                    if (!window['yaCounter' + dnevnik.settings.yandexMetrikaId]) {
+                        console.debug('Yandex.Metrika not loaded!');
+                    }
+
+                    ab.init({
+                        subdomain: '',
+                        group: 'groupA'
+                    });
+
+                    ab.start();
+                };
+            });
+        </script>
+    
+
+</body>
+</html>
